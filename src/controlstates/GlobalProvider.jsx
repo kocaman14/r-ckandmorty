@@ -1,10 +1,12 @@
 
 import React, { createContext, useEffect, useState } from 'react';
 import { rickAndMortyQuotes } from '../components/Quotations';
+import { BrowserRouter, Route, Router, useLocation } from 'react-router-dom';
 
 const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
+  
   const [randomCharacter, setRandomCharacter] = useState(null);
   const [isOpen, setIsOpen] = useState(true);
   const [randomQuote, setRandomQuote] = useState('');
@@ -67,6 +69,7 @@ export const GlobalProvider = ({ children }) => {
     fetchLocations();
   }, []);
 
+  const location = useLocation();
   useEffect(() => {
     const fetchRandomCharacter = async () => {
       try {
@@ -93,7 +96,7 @@ export const GlobalProvider = ({ children }) => {
     };
 
     fetchRandomCharacter();
-  }, []);
+  }, [location]);
 
 
 

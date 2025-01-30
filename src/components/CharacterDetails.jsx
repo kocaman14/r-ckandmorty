@@ -2,10 +2,10 @@ import React, { useContext, useEffect} from "react";
 import { useParams} from "react-router-dom";
 import GlobalContext from "../controlstates/GlobalProvider";
 
-
 function CharacterDetails() {
 const {setCharacter,character} = useContext(GlobalContext); 
   const { id } = useParams();
+  console.log(useParams())
 console.log(id)
 
  useEffect(() => {

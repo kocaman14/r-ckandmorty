@@ -14,8 +14,8 @@ import NotFoundPage from './components/NotFoundPage';
 
 const App = () => {
   return (
-    <GlobalProvider> 
       <BrowserRouter>
+    <GlobalProvider> 
         <Nav />
         <div className="bg-[#26b1c6] min-h-screen flex items-center justify-center"
         >
@@ -30,8 +30,8 @@ const App = () => {
         </Routes>
         </div>
         <Footer />
-      </BrowserRouter>
     </GlobalProvider>
+      </BrowserRouter>
   );
 };
 
